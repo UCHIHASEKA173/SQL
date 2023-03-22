@@ -1,0 +1,62 @@
+SCHEMA MIGRATIONS- Modify the structure of a database 
+    including table and column properties.
+ex.
+Create or delete table, column, or constraint.
+Alter property of column eg. name, datatype.
+Rename table, column, or constraint
+Any changes made to an Entity-Relationship Diagram
+
+DATA MIGRATIONS 
+ex.
+Transform existing data values into new format.
+May support new business requirements.
+May allow for compatability with other applications, 
+    services, or database systems.
+
+MIGRATIONS BEST PRACTICES-
+Incremental/ minimal change
+    New version of database at each increment.
+    Each increment is valid, working configuration.
+    Similar in concept to Git version control system 
+        file change tracking.
+Reversible/ ablility to undo a change
+    Changes can be rolled back to previous version.
+    To undo schema migration, invert the SQL query.
+    Database backups may be useful.
+    eg. drop foreign key, drop table.
+Programmatic (in forward and reverse)  
+    a way to automate the changes in either direction
+    
+MIGRATION ROLLBACKS-
+Forward Migration:
+ALTER TABLE customers
+    ADD COLUMN date_of_birth TIMESTAMP;
+
+Rollback Migration:
+ALTER TABLE customers
+    DROP COLUMN date_of_birth;
+
+Forward:
+ALTER TABLE customers
+    ADD COLUMN date_of_birth SET NOT NULL;
+
+Rollback:
+ALTER TABLE customers
+    ALTER COLUMN date_of_birth DROP NOT NULL;
+
+Forward:
+ALTER TABLE customers
+    ADD COLUMN date_of_birth SET DEFAULT now();
+
+Rollback 
+ALTER TABLE customers
+    ALTER COLUMN date_of_birth DROP DEFAULT;
+
+RECAP 
+Schema migrations manipulate structure database tables,
+    not data values.
+Each migration introduces minimal change.
+Each migration is non-breaking, maintains valid database.
+Rollback queries undo migrations.
+Multi statement rollbacks execute statements in reverse
+    order of forward migration.
