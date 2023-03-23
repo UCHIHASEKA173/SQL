@@ -1,0 +1,46 @@
+Pros of Raw SQL-
+Compatable with any backend
+    (Java, C++, Python)
+Portable, easier to maintain.
+No need to install, manage, and
+    learn ORM.
+Helps new contributors get up to 
+    speed faster.
+Database design is not influenced 
+    by ORM.
+
+Pros of ORM- 
+Lower barrier to entry/ more convienent
+to use boy someone with more experience
+    in a backend language/ unfamiliar with SQL.
+Increases development speed, great for rapid prototyping.
+Provides consistent, object-oriented structure and 
+    naming patterns.
+Usually fewer lines of code to write.
+May provide integration with migrations tool that
+    allows you to write in python.
+
+Raw SQL- 
+Low level direct queries
+Fewer tools to leanr and manage
+Better for complex queries
+Functional approach
+
+ORM-
+Higher level abstractions
+Convenient
+Better for simple queries
+Object oriented approach
+
+How to choose-
+Resources (time, number of developers)
+Scale (load, complexity)
+Expertise with SQL vs. backend language
+
+ORMs provide a framework for working with SQL
+ORM layers python or another language on top of the
+    sql queries being executed.
+Only some backends use an ORM.
+Even when using an ORM, its still important to 
+    know SQL.
+You must learn SQL to use relational databases.
